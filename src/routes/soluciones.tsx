@@ -78,7 +78,7 @@ function SolPage() {
   const save = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.descripcion.trim()) return toast.error("Descripción obligatoria");
-    const payload = Object.fromEntries(Object.entries(form).map(([k, v]) => [k, v === "" ? null : v]));
+    const payload: any = Object.fromEntries(Object.entries(form).map(([k, v]) => [k, v === "" ? null : v]));
     try {
       if (editing) {
         const { error } = await supabase.from("soluciones").update(payload).eq("id", editing.id);

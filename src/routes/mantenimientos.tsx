@@ -71,7 +71,7 @@ function MantPage() {
 
   const save = async (e: React.FormEvent) => {
     e.preventDefault();
-    const payload = Object.fromEntries(
+    const payload: any = Object.fromEntries(
       Object.entries(form).map(([k, v]) => [k, v === "" ? null : v])
     );
     try {
