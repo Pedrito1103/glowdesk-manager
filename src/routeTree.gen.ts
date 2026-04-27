@@ -9,8 +9,74 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as UsuariosRouteImport } from './routes/usuarios'
+import { Route as SolucionesRouteImport } from './routes/soluciones'
+import { Route as RolesRouteImport } from './routes/roles'
+import { Route as ReportesRouteImport } from './routes/reportes'
+import { Route as ProblemasRouteImport } from './routes/problemas'
+import { Route as MantenimientosRouteImport } from './routes/mantenimientos'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as EstadosRouteImport } from './routes/estados'
+import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as CategoriasRouteImport } from './routes/categorias'
+import { Route as AreasRouteImport } from './routes/areas'
 import { Route as IndexRouteImport } from './routes/index'
 
+const UsuariosRoute = UsuariosRouteImport.update({
+  id: '/usuarios',
+  path: '/usuarios',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SolucionesRoute = SolucionesRouteImport.update({
+  id: '/soluciones',
+  path: '/soluciones',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RolesRoute = RolesRouteImport.update({
+  id: '/roles',
+  path: '/roles',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReportesRoute = ReportesRouteImport.update({
+  id: '/reportes',
+  path: '/reportes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProblemasRoute = ProblemasRouteImport.update({
+  id: '/problemas',
+  path: '/problemas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MantenimientosRoute = MantenimientosRouteImport.update({
+  id: '/mantenimientos',
+  path: '/mantenimientos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EstadosRoute = EstadosRouteImport.update({
+  id: '/estados',
+  path: '/estados',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardRoute = DashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CategoriasRoute = CategoriasRouteImport.update({
+  id: '/categorias',
+  path: '/categorias',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AreasRoute = AreasRouteImport.update({
+  id: '/areas',
+  path: '/areas',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +85,186 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/areas': typeof AreasRoute
+  '/categorias': typeof CategoriasRoute
+  '/dashboard': typeof DashboardRoute
+  '/estados': typeof EstadosRoute
+  '/login': typeof LoginRoute
+  '/mantenimientos': typeof MantenimientosRoute
+  '/problemas': typeof ProblemasRoute
+  '/reportes': typeof ReportesRoute
+  '/roles': typeof RolesRoute
+  '/soluciones': typeof SolucionesRoute
+  '/usuarios': typeof UsuariosRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/areas': typeof AreasRoute
+  '/categorias': typeof CategoriasRoute
+  '/dashboard': typeof DashboardRoute
+  '/estados': typeof EstadosRoute
+  '/login': typeof LoginRoute
+  '/mantenimientos': typeof MantenimientosRoute
+  '/problemas': typeof ProblemasRoute
+  '/reportes': typeof ReportesRoute
+  '/roles': typeof RolesRoute
+  '/soluciones': typeof SolucionesRoute
+  '/usuarios': typeof UsuariosRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/areas': typeof AreasRoute
+  '/categorias': typeof CategoriasRoute
+  '/dashboard': typeof DashboardRoute
+  '/estados': typeof EstadosRoute
+  '/login': typeof LoginRoute
+  '/mantenimientos': typeof MantenimientosRoute
+  '/problemas': typeof ProblemasRoute
+  '/reportes': typeof ReportesRoute
+  '/roles': typeof RolesRoute
+  '/soluciones': typeof SolucionesRoute
+  '/usuarios': typeof UsuariosRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/areas'
+    | '/categorias'
+    | '/dashboard'
+    | '/estados'
+    | '/login'
+    | '/mantenimientos'
+    | '/problemas'
+    | '/reportes'
+    | '/roles'
+    | '/soluciones'
+    | '/usuarios'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/areas'
+    | '/categorias'
+    | '/dashboard'
+    | '/estados'
+    | '/login'
+    | '/mantenimientos'
+    | '/problemas'
+    | '/reportes'
+    | '/roles'
+    | '/soluciones'
+    | '/usuarios'
+  id:
+    | '__root__'
+    | '/'
+    | '/areas'
+    | '/categorias'
+    | '/dashboard'
+    | '/estados'
+    | '/login'
+    | '/mantenimientos'
+    | '/problemas'
+    | '/reportes'
+    | '/roles'
+    | '/soluciones'
+    | '/usuarios'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AreasRoute: typeof AreasRoute
+  CategoriasRoute: typeof CategoriasRoute
+  DashboardRoute: typeof DashboardRoute
+  EstadosRoute: typeof EstadosRoute
+  LoginRoute: typeof LoginRoute
+  MantenimientosRoute: typeof MantenimientosRoute
+  ProblemasRoute: typeof ProblemasRoute
+  ReportesRoute: typeof ReportesRoute
+  RolesRoute: typeof RolesRoute
+  SolucionesRoute: typeof SolucionesRoute
+  UsuariosRoute: typeof UsuariosRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/usuarios': {
+      id: '/usuarios'
+      path: '/usuarios'
+      fullPath: '/usuarios'
+      preLoaderRoute: typeof UsuariosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/soluciones': {
+      id: '/soluciones'
+      path: '/soluciones'
+      fullPath: '/soluciones'
+      preLoaderRoute: typeof SolucionesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/roles': {
+      id: '/roles'
+      path: '/roles'
+      fullPath: '/roles'
+      preLoaderRoute: typeof RolesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reportes': {
+      id: '/reportes'
+      path: '/reportes'
+      fullPath: '/reportes'
+      preLoaderRoute: typeof ReportesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/problemas': {
+      id: '/problemas'
+      path: '/problemas'
+      fullPath: '/problemas'
+      preLoaderRoute: typeof ProblemasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mantenimientos': {
+      id: '/mantenimientos'
+      path: '/mantenimientos'
+      fullPath: '/mantenimientos'
+      preLoaderRoute: typeof MantenimientosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/estados': {
+      id: '/estados'
+      path: '/estados'
+      fullPath: '/estados'
+      preLoaderRoute: typeof EstadosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard': {
+      id: '/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/categorias': {
+      id: '/categorias'
+      path: '/categorias'
+      fullPath: '/categorias'
+      preLoaderRoute: typeof CategoriasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/areas': {
+      id: '/areas'
+      path: '/areas'
+      fullPath: '/areas'
+      preLoaderRoute: typeof AreasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,16 +277,18 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AreasRoute: AreasRoute,
+  CategoriasRoute: CategoriasRoute,
+  DashboardRoute: DashboardRoute,
+  EstadosRoute: EstadosRoute,
+  LoginRoute: LoginRoute,
+  MantenimientosRoute: MantenimientosRoute,
+  ProblemasRoute: ProblemasRoute,
+  ReportesRoute: ReportesRoute,
+  RolesRoute: RolesRoute,
+  SolucionesRoute: SolucionesRoute,
+  UsuariosRoute: UsuariosRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { createStart } from '@tanstack/react-start'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-  }
-}
